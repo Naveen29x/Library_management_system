@@ -59,8 +59,13 @@ def Update_member(id):
 def delete_by_id(id):
     try:
         cursor=conn.cursor()
-        cursor.execute("delete from person where memember_id=%s",(id))
-    finally pymysql.MySQLError as e:
+        cursor.execute("delete from person where member_id=%s",(id))
+        conn.commit()
+    except pymysql.MySQLError as e:
+            print(e)
+            conn.rollback()
+            return 
+
 
 
     
