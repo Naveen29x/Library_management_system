@@ -10,9 +10,12 @@ import books.book
 from members.member import new_user
 from members.member import show_person
 from members.member import member_by_id
+from members.member import Update_member
 
 
-member_by_id(1)
+
+Update_member(1)
+show_person()
 
 
 
